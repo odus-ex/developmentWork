@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom';
 const CourseCardComp = (props) => {
 
 
-    const {courseName} = props.course
+   
     return (  
      
      <div className="cotainer-fluid">
@@ -14,6 +14,9 @@ const CourseCardComp = (props) => {
             <div className="card" style={{borderRadius: '0.5rem'}}>
                 <Link to={{
                     pathname: `/courseDetail/${props.course.courseID}`,
+                    state: {
+                        courseDetails: props.course
+                      }
                 }} >
 
                     <img className='card-img-top img-fluid' src={thumbSrc} alt="Thumbnail not available" style={{borderRadius: '0.5rem'}}/>
@@ -21,7 +24,7 @@ const CourseCardComp = (props) => {
                 </Link>
 
                 <div className="card-header text-left" style={{clear: 'both'}}>
-                            {courseName.length > 20 ? <h4>{courseName.substring(0,30)}...</h4> : <h4>{courseName.substring(0,20)}</h4> }
+                            {props.course.courseName.length > 20 ? <h4>{props.course.courseName.substring(0,30)}...</h4> : <h4>{props.course.courseName.substring(0,20)}</h4> }
                                  
                 </div>
 
@@ -39,7 +42,7 @@ const CourseCardComp = (props) => {
                            </div>
                        </div>
                        <div className="col-4 m-auto text-right">
-                            <p style={{color: 'grey'}}> {props.course.courseDetails.videoArray.length} videos </p>
+                            <p style={{color: 'grey'}}> {props.course.courseVideos.length} videos </p>
                        </div>
                    </div>
 

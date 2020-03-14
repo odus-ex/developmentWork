@@ -21,12 +21,11 @@ class CourseRenderer extends Component {
 
 
      componentDidMount() {
-        fetch('http://192.168.0.106:4000/api/courses/').then(
+        fetch('http://localhost:4000/').then(
             results => {return results.json()}
         ).then( 
             data => {
                 
-
                 this.setState({defaultCourseDump: data})
                 this.setState({courseDump: data})
                 
@@ -86,7 +85,6 @@ class CourseRenderer extends Component {
                         {this.state.courseDump.length === 0 ? <h2>No courses found :(</h2> : 
                         
                         this.state.courseDump.map(course => 
-                        
                         <div className="col-sm-12 col-md-6 col-lg-4 text-center p-3" key={course.courseID}>
                                <CourseCardComp course={course}/>
                         </div>
