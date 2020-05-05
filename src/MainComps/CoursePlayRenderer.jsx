@@ -20,9 +20,11 @@ class CoursePlayRenderer extends Component {
         this.setState({playlistChatSwitch: value})
     }
 
-    hnadleShuffle(shuffle) {
-         
-        shuffle === 1 ? this.setState({urlListIndex: this.state.urlListIndex + 1}) : this.setState({urlListIndex: this.state.urlListIndex - 1})
+    handleShuffle(shuffle) {
+       
+            shuffle === 1 ? this.setState({urlListIndex: this.state.urlListIndex + 1}) : this.setState({urlListIndex: this.state.urlListIndex - 1})
+        
+        
     }
 
 
@@ -48,10 +50,10 @@ class CoursePlayRenderer extends Component {
     
                     </div>
                     <div className="col-4">
-                        <Button style={{width: '100%'}} onClick={() => this.hnadleShuffle(0)}>Prev</Button>
+                        <Button style={{width: '100%'}} onClick={() => this.handleShuffle(0)}>Prev</Button>
                     </div>
                     <div className="col-4">
-                        <Button style={{width: '100%'}} onClick={() => this.hnadleShuffle(1)}> Next</Button>
+                        <Button style={{width: '100%'}} onClick={() => this.handleShuffle(1)}> Next</Button>
                     </div>
                 </div>
                 {/* Chat/Playlist col and video player */}

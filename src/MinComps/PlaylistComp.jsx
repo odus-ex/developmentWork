@@ -16,7 +16,7 @@ return(
 
             {props.playlist === undefined ? <h1> Loading..</h1>: props.playlist.map(video =>
                         
-                        <div className="card p-2 m-2 no-gutters" key={video.videoName}>
+                        <div className="card p-2 m-2 no-gutters" key={video.videoName} >
                             <div className="row">
                                 <div className="col-1 text-center m-auto ">
                                        <h1> <i className="fa fa-play-circle"></i></h1>

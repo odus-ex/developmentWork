@@ -34,10 +34,10 @@ class CourseDetailRenderer extends Component {
                         <div className="col-8 mt-4">
                             <h4> {courseDetails.courseDescription} </h4>
                         </div>
-                        <div className="col-4 mt-4">
-                            <div className="row">
-                            <div className="col-2 text-center "> <img src='some source' alt="NA"/> </div>
-                            <div className="col-6 text-left "> <h5>{courseDetails.authorName   }</h5> </div>
+                        <div className="col-6 mt-4">
+                            <div className="row no-gutters">
+                            <div className="col-2 text-left "> <img src='some source' alt="img"/> </div>
+                            <div className="col-6 text-left "> <h5>{courseDetails.authorName}</h5> </div>
                             </div>
                             
                         

@@ -3,10 +3,8 @@ import SearchComp from '../MinComps/SearchComp';
 import CourseCardComp from '../MinComps/CourseCardComp';
 
 
+
 class CourseRenderer extends Component {
-
-
-
 
     state = { 
 
@@ -53,8 +51,26 @@ class CourseRenderer extends Component {
         }
         else{
             
-            let newCourseArray = []
-            this.state.defaultCourseDump.map(course => (course.courseName.toLowerCase().includes(searchedTerm.toLowerCase())? newCourseArray.push(course) : console.log(`Nothing found for searched term: ${searchedTerm}`)))
+            let newCourseArray = [];
+            
+
+
+            this.state.defaultCourseDump.map(course => (
+
+                // in course name
+                course.courseName.toLowerCase().includes(searchedTerm.toLowerCase()) ||
+                // in authour name
+                course.authorName.toLowerCase().includes(searchedTerm.toLowerCase()) ||
+                // in description
+                course.courseDescription.toLowerCase().includes(searchedTerm.toLowerCase()) 
+                // or check for any match of substring in the string searched 
+                
+
+                                
+                ? 
+            
+            
+            newCourseArray.push(course) : console.log()))
             return newCourseArray;
         }
 
